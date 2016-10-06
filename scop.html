@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scop POC</title>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> -->
+<link rel="stylesheet"
+	href="bootstrap/bootstrap-3.3.6/css/bootstrap.min.css">
+<link href="fonts/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link
+	href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/scope.css">
+
+</head>
+<body>
+	<div class="container main-container">
+		<h2 class="main-heading">Scop</h2>
+		<div class="search-wrapper">
+		<div class="input-group">
+  <input type="text" class="search-box" id="searchBox" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+  <span class="input-group-addon" id="basicAddon2"><span class="glyphicon glyphicon-search"></span></span>
+</div>
+<button type="button" class="btn btn-xs" id="filterBtn">
+  <span class="glyphicon glyphicon-filter"></span>&nbsp;
+</button>
+<!--Div will will shown when clicks n filter button  -->
+	<div class="filter-wrapper" id="filterWrapper">
+	<div class="checkbox-block">
+      <input type="checkbox" class="team-checkbox" id="teamCheckbox"><label class="checkbox-label">Team</label>
+      <input type="checkbox" class="team-checkbox" id="jobTitleCheckbox"><label class="checkbox-label">Job Title</label>
+      </div>
+      
+      <hr class="baseline"/>
+      <div id="jobWrapper" class="job-wrapper">
+      <div class="team-checkbox-block" id="teamCheckboxBlock">
+       <input type="checkbox" class="team-checkbox wf-checkbox" name="Web FrontEnd" id="webFrontEnd"><label class="checkbox-label wf-label">Web FrontEnd</label>
+       <input type="checkbox" class="team-checkbox wf-checkbox" name="Backend" id="backEnd"><label class="checkbox-label wf-label">BackEnd</label>
+	  </div>
+       <div class="jobtitle-checkbox-block" id="jobTitleCheckboxBlock">
+       <div class="checkbox-left">
+        <input type="checkbox" class="team-checkbox wf-checkbox" name="Sr Developer" id="srDeveloper"><label class="checkbox-label">Sr Developer</label>
+       <input type="checkbox" class="team-checkbox wf-checkbox" name="Team Lead" id="tLead"><label class="checkbox-label">Team Lead</label>
+       <input type="checkbox" class="team-checkbox wf-checkbox" name="DBA" id="dba"><label class="checkbox-label">DBA</label>
+       </div>
+       <div class="checkbox-right">
+       <input type="checkbox" class="team-checkbox wf-checkbox" name="Sol Architect" id="tMember"><label class="checkbox-label">Sol Architect</label>
+       <input type="checkbox" class="team-checkbox wf-checkbox" name="Jr Developer" id="tLead"><label class="checkbox-label">Jr Developer</label> 
+       </div>
+       </div>    
+    </div>
+   	
+	</div>
+</div>
+<section data-ng-app="mainApp" data-ng-controller="ScopController"
+			class="main-section container-fluid">
+			<div class="main-wrapper row" id="mainWrapper">
+			 <div class="data-table col-lg-3 col-md-3 col-sm-6">
+				<div class="circle-tl filled" data-name="Shilpy" data-job-title="Sr Developer" data-team="Web FrontEnd" data-proj="Dell App Design" data-value="shilpy"></div>
+				<div class="circle-tr vacent"></div>
+				<div class="circle-bl filled" data-name="Sakshi" data-job-title="Team Lead" data-team="Web FrontEnd" data-proj="Dell App Design" data-value="sakshi"></div>
+				<div class="circle-br filled" data-name="Priya" data-job-title="DBA" data-team="Backend" data-proj="Dell App Design" data-value="priya"></div>
+				<span class="content">Table1</span>
+			</div>
+			<div class="data-table col-lg-3 col-md-3 col-sm-6">
+				<div class="circle-tl vacent"></div>
+				<div class="circle-tr filled" data-name="Rakesh" data-job-title="Jr Developer" data-team="Backend" data-proj="AG Insurance" data-value="rakesh"></div>
+				<div class="circle-bl filled" data-name="Amitabh" data-job-title="Sol Architect" data-team="Web FrontEnd" data-proj="AG Insurance" data-value="amitabh"></div>
+				<div class="circle-br vacent"></div>
+				<span class="content">Table2</span>
+			</div>
+			<div class="data-table shift-class col-lg-3 col-md-3 col-sm-6">
+				<div class="circle-tl filled" data-name="Hari" data-job-title="Jr Developer" data-team="Web FrontEnd" data-proj="Metlife" data-value="hari"></div>
+				<div class="circle-tr filled" data-name="Urmita" data-job-title="Team Lead" data-team="Backend" data-proj="Metlife" data-value="urmita"></div>
+				<div class="circle-bl filled" data-name="Shekhar" data-job-title="Sol Architect" data-team="Backend" data-proj="Metlife" data-value="abhijeet"></div>
+				<div class="circle-br vacent"></div>
+				<span class="content">Table3</span>
+			</div>
+				<div class="data-table col-lg-3 col-md-3 col-sm-6">
+				<div class="circle-tl filled" data-name="Preetam" data-job-title="Team Lead" data-team="Web FrontEnd" data-proj="Prime Energy" data-value="preetam"></div>
+				<div class="circle-tr filled" data-name="Tithi" data-job-title="Jr Developer" data-team="Backend" data-proj="Prime Energy" data-value="tithi"></div>
+				<div class="circle-bl filled" data-name="Laxmi" data-job-title="Sr Developer" data-team="Web FrontEnd" data-proj="Prime Energy" data-value="laxmi"></div>
+				<div class="circle-br filled" data-name="Ankita" data-job-title="DBA" data-team="Web FrontEnd" data-proj="Prime Energy" data-value="ankita"></div>
+				<span class="content">Table4</span>
+			</div>
+			<div class="data-table col-lg-3 col-md-3 col-sm-6">
+				<div class="circle-tl filled" data-name="Soumyajyoti" data-job-title="Team Lead" data-team="Web FrontEnd" data-proj="Pearson Group" data-value="soumyajyoti"></div>
+				<div class="circle-tr filled" data-name="Subhadip" data-job-title="Jr Developer" data-team="Web FrontEnd" data-proj="Pearson Group" data-value="subhadip"></div>
+				<div class="circle-bl vacent"></div>
+				<div class="circle-br filled" data-name="Anirban" data-job-title="Sol Architect" data-team="Backend" data-proj="Pearson Group" data-value="anirban"></div>
+				<span class="content">Table5</span>
+			</div>
+			<div class="data-table col-lg-3 col-md-3 col-sm-6">
+				<div class="circle-tl vacent"></div>
+				<div class="circle-tr vacent"></div>
+				<div class="circle-bl filled"  data-name="Rahul" data-job-title="DBA" data-team="Web FrontEnd" data-proj="TATA AIG Insurance" data-value="rahul"></div>
+				<div class="circle-br filled" data-name="Swati" data-job-title="Team Lead" data-team="Web FrontEnd" data-proj="TATA AIG Insurance" data-value="swati"></div>
+				<span class="content">Table6</span>
+			</div>
+	   </div>
+</section>
+</div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/ScopController.js"></script>
+	<script type="text/javascript" src="js/scope.js"></script>
+</body>
+</html>
